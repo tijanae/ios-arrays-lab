@@ -7,7 +7,13 @@ Fork and clone this repo. On your fork, answer and commit the follow questions. 
 Create an array of strings called `colors` that contain "orange", "red", "yellow", "turquoise", and "lavender".
 
 Then, using array subscripting and string interpolation, print out the String `"orange, yellow, and lavender are some of my favorite colors"`.
+```
+var colors = ["orange", "red", "yellow", "turquoise", "lavender"]
 
+print("\(colors[0]), \(colors[2]), and \(colors[4]), are some of my favorite colors")
+
+
+```
 
 ## Question 2
 
@@ -15,13 +21,42 @@ Remove "Illinois" and "Kansas" from the array below.
 
 `var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]`
 
+```
+var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
+var newArray = [String]()
+//var newWest = westernStates.remove(at:4)
+var illi = "Illinois"
+var kans = "Kansas"
+//print ("\(westernStates[0]), \(westernStates[1]), \(westernStates[2]), \(westernStates[3])")
+for i in westernStates{
+if i != illi && i != kans {
+newArray.append(i)
+//  westernStates.remove(at:5)
+}
+}
+print(newArray)
+```
 
 ## Question 3
 
 Iterate through the array below. For each state, print out the name of the state, a colon, and whether it is or is not **in the continental United States.**
 
 `let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]`
+```
+var moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
+//var mainLand = [String]()
+var notMainLand = ["Hawaii", "Alaska"]
 
+for i in moreStates{
+if notMainLand.contains(i){
+print("\(i) is not mainland")
+}
+else{
+//        mainLand.append(i)
+print("\(i) is mainland")
+}
+}
+```
 
 ## Question 4
 
@@ -33,6 +68,35 @@ Iterate through the array below. For each sentence, print out how many non-white
 
 `let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]`
 
+```
+let myString = "This is good practice with Strings!"
+var newString = ""
+for i in myString{
+if i != " "{
+newString.append(i)
+
+}
+}
+print(newString.count)
+
+```
+```
+let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
+var quotes = ""
+var space = " "
+
+for sentence in myFavoriteQuotes{
+for character in sentence{
+if character != Character(space){
+quotes.append(character)
+}
+}
+
+print(sentence, quotes.count)
+quotes = ""
+}
+```
+
 
 ## Question 5
 
@@ -41,6 +105,21 @@ Iterate through `garden` and place any 🌷 that you find into the `basket`. Rep
 ```swift
 var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
 var basket = [String]()
+```
+```
+var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
+var basket = [String]()
+
+for pickingFlowers in garden {
+if pickingFlowers == "🌷" {
+basket.append("🌷")
+}
+garden.remove(at: 0)
+garden.append("dirt")
+}
+
+print(basket.count)
+print(garden )
 ```
 
 ## Question 6
@@ -54,6 +133,18 @@ The below array represents an unfinished batting lineup for a baseball team. **Y
 
 `var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]`
 
+```
+var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]
+
+battingLineup.append("Suzuki")
+battingLineup.remove(at: 1)
+battingLineup.insert("Tejada", at: 1)
+battingLineup.remove(at: 5)
+battingLineup.insert("Guerrero", at: 1)
+battingLineup.remove(at: 0)
+battingLineup.insert("Reyes", at: 7)
+print(battingLineup)
+```
 
 ## Question 7
 
@@ -77,6 +168,17 @@ target = 32
 
 //true
 ```
+```
+var numbers = [4,2,6,73,32,4,2,1]
+
+let target = 32
+
+for seeker in numbers{
+if seeker == target{
+print("\(target) is in the box")
+}
+}
+```
 
 Ex. 2
 
@@ -86,8 +188,22 @@ numbers = [32459,2,4,5,1,4,2,1]
 target = 3
 
 //false
-```
 
+```
+```
+var numbers = [32459,2,4,5,1,4,2,1]
+
+let target = 3
+
+for seeker in numbers{
+if seeker == target{
+print ("\(target) is in the box")
+}
+else{
+print("Target \(target) not found")
+}
+}
+```
 
 ## Question 8
 
@@ -117,6 +233,19 @@ Iterate through `secondListOfNumbers`, and print out all the odd numbers.
 
 `var secondListOfNumbers = [19,13,14,19,101,10000,141,404]`
 
+```
+var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
+var thirdListOfNumbers:[Int] = []
+
+for seeker in secondListOfNumbers{
+if seeker % 2 != 0 {
+thirdListOfNumbers.append(seeker)
+}
+}
+print(thirdListOfNumbers)
+
+```
+
 
 ## Question 11
 
@@ -124,12 +253,36 @@ Iterate through `thirdListOfNumbers`, and print out the sum.
 
 `var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]`
 
+```
+var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
+
+var summingNumbers = thirdListOfNumbers.reduce (0, +)
+
+print(summingNumbers)
+
+```
+
 
 ## Question 12
 
 Iterate through `thirdListOfNumbers`, and print out the sum of all the even numbers.
 
 `var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]`
+
+```
+var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
+var fourthListOfNumbers: [Int] = []
+
+for evenSeeker in thirdListOfNumbers{
+if evenSeeker % 2 == 0 {
+fourthListOfNumbers.append(evenSeeker)
+}
+}
+
+var summingNumbers = fourthListOfNumbers.reduce (0, +)
+
+print(summingNumbers)
+```
 
 
 ## Question 13
@@ -140,6 +293,20 @@ Append every Int that appears in both `listOne` and `listTwo` to the `sharedElem
 var listOne = [28, 64, 7, 96, 13, 32, 94, 11, 80, 68]
 var listTwo = [18, 94, 48, 6, 42, 68, 79, 76, 13, 7]
 var sharedElements = [Int]()
+```
+```
+var listOne = [28, 64, 7, 96, 13, 32, 94, 11, 80, 68]
+var listTwo = [18, 94, 48, 6, 42, 68, 79, 76, 13, 7]
+var sharedElements = [Int]()
+
+for i in listOne{
+sharedElements.append( i)
+}
+for j in listTwo{
+sharedElements.append( j)
+}
+print(sharedElements.count)
+
 ```
 
 
@@ -164,6 +331,21 @@ Find the second smallest number in an Array of Ints
 If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
 Find the sum of all the multiples of 3 or 5 below 1000.
+
+```
+var multiThreeAndFive = 1...999
+var summingMultiThreeAndFive: [Int] = []
+
+for seekingMulti in multiThreeAndFive{
+if seekingMulti % 3 == 0 {
+summingMultiThreeAndFive.append(seekingMulti)
+}
+if seekingMulti % 5 == 0 {
+summingMultiThreeAndFive.append(seekingMulti)
+}
+}
+```
+
 
 
 ## Question 17
